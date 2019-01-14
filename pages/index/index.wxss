@@ -1,0 +1,249 @@
+/**index.wxss**/
+
+/** not login **/
+.not-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reject-tip {
+  margin-top: 20rpx;
+}
+
+/** login but no-appointment **/
+.login-noap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.noap-userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.noap-userinfo-nickname {
+  color: #aaa;
+}
+
+.noap-new-ap-btn {
+  margin-top: 70rpx;
+  width: 100%;
+}
+
+/** login and has-appointment **/
+#container-login-hasap {
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.login-hasap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.hasap-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.hasap-userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.hasap-userinfo-nickname {
+  color: #aaa;
+}
+
+.hasap-text {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.hasap-cards {
+  display: flex;
+  padding: 10rpx;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50rpx;
+}
+
+.hasap-cards-datetime {
+  font-size: 13pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rpx;
+}
+
+.hasap-cards-from-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.hasap-cards-card {
+  margin-top: 10rpx;
+  margin-right: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 3rpx; 
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-shadow: 5rpx 5rpx 2rpx #f0f0f0, -2rpx -2rpx 2rpx #ececec;
+}
+
+.hasap-cards-card-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.hasap-cards-card-title-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hasap-cards-card-title-text-from {
+  font-size: 11pt;
+}
+
+.hasap-cards-card-title-text-topic {
+  font-size: 11pt;
+  color: gray;
+}
+
+.hasap-cards-card-location-abbr {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 20rpx;
+}
+
+.hasap-cards-card-location-abbr-img {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.hasap-cards-card-location-abbr-prompt {
+  font-size: 11pt;
+  flex-shrink: 0;
+}
+
+.hasap-cards-card-location-abbr-location-and-arrow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.hasap-cards-card-location-abbr-location {
+  font-size: 11pt;
+}
+
+.hasap-cards-card-location-abbr-up, .hasap-cards-card-location-abbr-down {
+  margin-left: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
+.hasap-cards-card-member {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 20rpx;
+}
+
+.hasap-cards-card-member-img {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.hasap-cards-card-member-prompt {
+  font-size: 11pt;
+  flex-shrink: 0;
+}
+
+.hasap-cards-card-member-details {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.hasap-cards-card-member-details-number {
+  font-size: 11pt;
+  margin-bottom: 20rpx;
+}
+
+.hasap-cards-card-member-details-number-avatar-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.hasap-cards-card-member-details-number-avatar {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  align-self: flex-end;
+  position: fixed;
+  bottom: .52em;
+  width: 100%;
+  background: white;
+  border-top:1rpx solid;
+  border-top-color: #e0e0e0;
+  padding-top: 10rpx;
+}
+
+.menu-invited, .menu-i-invite {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu-invited-icon, .menu-i-invite-icon {
+  width: 75rpx;
+  height: 75rpx;
+}
+
+.menu-invited-text, .menu-i-invite-text {
+  font-size: 9pt;
+  margin-top: 1rpx;
+}
+
+#menu-invited-tap-area, #menu-i-invite-tap-area {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

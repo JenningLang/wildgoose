@@ -1,0 +1,104 @@
+<!--index.wxml-->
+
+<!-- not login-->
+<view class="container" wx:if="{{!hasUserInfo && canIUse && showLogin}}">
+  <view class="not-login">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取您的信息 </button>
+    <text class="reject-tip" wx:if="{{rejectTip1}}"> 哼! </text>
+    <text class="reject-tip" wx:if="{{rejectTip2}}"> 哼哼! </text>
+    <text class="reject-tip" wx:if="{{rejectTip3}}"> 不理你了! </text>
+  </view>
+</view>
+
+<!-- login but no-appointment-->
+<view class='container' wx:if="{{hasUserInfo && !hasAp}}">
+  <view class="login-noap">
+    <image class="noap-userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <block class="noap-text">
+      <text class="noap-userinfo-nickname">您好，{{userInfo.nickName}}</text>
+      <text class="noap-userinfo-nickname">还没有人约你呦～</text>
+    </block>
+    <button class="noap-new-ap-btn" type="primary">Let's go party!</button>
+  </view>
+</view>
+
+<!-- login and has-appointment-->
+<view class='container' id="container-login-hasap" wx:if="{{hasUserInfo && hasAp}}">
+  <view class="login-hasap" wx:if="{{ tabSelected == 'invited-tab' }}">
+    <view class="hasap-title">
+      <image class="hasap-userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <view class="hasap-text">
+        <text class="hasap-userinfo-nickname">您好，{{userInfo.nickName}}！</text>
+        <text class="hasap-userinfo-nickname">有<text style='color: #e64340'>xx</text>个朋友约了你呢～</text>
+      </view>
+    </view>
+    <scroll-view class='hasap-cards'>
+      <view class='hasap-cards-datetime'>
+        <text>2019-02-03 星期天 19:00</text>
+        <text>xx天后</text>
+      </view>
+      <view class='hasap-cards-card'>
+        <view class='hasap-cards-card-title'>
+          <image class="hasap-cards-from-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <view class='hasap-cards-card-title-text'>
+            <text class='hasap-cards-card-title-text-from'>发起人: <text style='font-weight: bold'>Alice</text></text>
+            <text class='hasap-cards-card-title-text-topic'>年后最后一波</text>
+          </view>
+        </view>
+        <view class='hasap-cards-card-location-abbr'>
+          <image class='hasap-cards-card-location-abbr-img' src='/images/location.png'/>
+          <text class='hasap-cards-card-location-abbr-prompt'>地点：</text>
+          <view class='hasap-cards-card-location-abbr-location-and-arrow'>
+            <text class='hasap-cards-card-location-abbr-location'>北京市海淀区中关村大街15号食宝街</text>
+            <image class='hasap-cards-card-location-abbr-up' src='/images/up-arrow.png' wx:if="{{ location.showMap }}" bindtap="toggleShowMap"/>
+            <image class='hasap-cards-card-location-abbr-down' src='/images/right-arrow.png' wx:if="{{ !location.showMap }}" bindtap="toggleShowMap"/>
+          </view>
+        </view>
+        <map class='hasap-cards-card-map' wx:if="{{ location.showMap }}"></map>
+        <view class='hasap-cards-card-member'>
+          <image class='hasap-cards-card-member-img' src='/images/group.png'/>
+          <text class='hasap-cards-card-member-prompt'>邀请：</text>
+          <view class='hasap-cards-card-member-details'>
+            <text class='hasap-cards-card-member-details-number'>7人</text>
+            <view class="hasap-cards-card-member-details-number-avatar-group">
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+              <image class="hasap-cards-card-member-details-number-avatar" src="{{userInfo.avatarUrl}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="arrangement" wx:if="{{ tabSelected == 'i-invite-tab' }}">
+  
+  </view>
+  <view class='menu'>
+    <view class='menu-invited'>
+      <view id='menu-invited-tap-area' wx:if="{{ tabSelected == 'invited-tab' }}" bindtap="menuTapped">
+        <image class='menu-invited-icon' src='/images/coffee-selected.png'/>
+        <text class='menu-invited-text' style='color: #09bb07;'>有人约我</text>
+      </view>
+      <view id='menu-invited-tap-area' wx:if="{{ tabSelected == 'i-invite-tab' }}" bindtap="menuTapped">
+        <image class='menu-invited-icon' src='/images/coffee-not-selected.png'/>
+        <text class='menu-invited-text' style='color: #707070;'>有人约我</text>
+      </view>
+    </view>
+    <view class='menu-i-invite'>
+      <view id='menu-i-invite-tap-area' wx:if="{{ tabSelected == 'i-invite-tab' }}" bindtap="menuTapped">
+        <image class='menu-i-invite-icon' src='/images/calendar-selected.png'/>
+        <text class='menu-i-invite-text' style='color: #09bb07;'>我的邀约</text>
+      </view>
+      <view id='menu-i-invite-tap-area' wx:if="{{ tabSelected == 'invited-tab' }}" bindtap="menuTapped">
+        <image class='menu-i-invite-icon' src='/images/calendar-not-selected.png'/>
+        <text class='menu-i-invite-text' style='color: #707070;'>我的邀约</text>
+      </view>
+    </view>
+  </view>
+</view>
