@@ -29,7 +29,7 @@ Page({
   onLoad: function () {
     wx.showLoading({
       title: '加载中',
-    })
+    });
     wx.getUserInfo({
       success: res => {
         app.globalData.userInfo = res.userInfo
@@ -41,7 +41,7 @@ Page({
         });
         wx.hideLoading();      
       }
-    })
+    });
   },
   getUserInfo: function (e) {
     console.log(e);
@@ -81,3 +81,11 @@ Page({
     }
   }
 })
+
+// TODO
+// 1. 卡片动态切换效果
+// 2. 左右箭头提示
+// 3. 卡片地点和地图位置关联
+// 4. 日历美化
+// 5. 日历下面的部分
+// 6. 后端接口可以先开发并提供 fake 数据

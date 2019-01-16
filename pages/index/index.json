@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "约起",
-  "usingComponents": {}
+  "navigationBarTitleText": "易Party",
+  "usingComponents": {
+    "calendar": "plugin://calendar/calendar"
+  }
 }

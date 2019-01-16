@@ -41,6 +41,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .login-hasap {
@@ -51,7 +52,6 @@
 }
 
 .hasap-title {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -79,9 +79,10 @@
 .hasap-cards {
   display: flex;
   padding: 10rpx;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin-top: 50rpx;
+  width: 96%;
 }
 
 .hasap-cards-datetime {
@@ -90,6 +91,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 3rpx;
+  width: 95%;
 }
 
 .hasap-cards-from-avatar {
@@ -99,11 +101,13 @@
   border-radius: 50%;
 }
 
-.hasap-cards-card {
+.hasap-cards-card-container {
   margin-top: 10rpx;
-  margin-right: 5rpx;
   margin-bottom: 5rpx;
-  margin-left: 3rpx; 
+}
+
+.hasap-cards-card {
+  margin: 10rpx;
   border-radius: 20rpx;
   padding: 20rpx;
   box-shadow: 5rpx 5rpx 2rpx #f0f0f0, -2rpx -2rpx 2rpx #ececec;
@@ -135,6 +139,7 @@
   align-items: flex-start;
   flex-direction: row;
   margin: 20rpx;
+  margin-top: 30rpx;
 }
 
 .hasap-cards-card-location-abbr-img {
@@ -157,6 +162,7 @@
 
 .hasap-cards-card-location-abbr-location {
   font-size: 11pt;
+  white-space: pre-wrap; 
 }
 
 .hasap-cards-card-location-abbr-up, .hasap-cards-card-location-abbr-down {
@@ -164,6 +170,7 @@
   width: 40rpx;
   height: 40rpx;
   flex-shrink: 0;
+  right: 0;
 }
 
 .hasap-cards-card-member {
@@ -171,6 +178,7 @@
   align-items: flex-start;
   flex-direction: row;
   margin: 20rpx;
+  margin-top: 50rpx;
 }
 
 .hasap-cards-card-member-img {
@@ -218,12 +226,13 @@
   flex-direction: row;
   align-self: flex-end;
   position: fixed;
-  bottom: .52em;
+  bottom: 0;
   width: 100%;
   background: white;
   border-top:1rpx solid;
   border-top-color: #e0e0e0;
-  padding-top: 10rpx;
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
 }
 
 .menu-invited, .menu-i-invite {
@@ -246,4 +255,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+/* arrangement */
+.arrangement {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+.arrangement-calendar {
+  width: 100%;
 }
