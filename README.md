@@ -1,4 +1,4 @@
-# Project wildgoose
+# WILDGOOSE
 
 ## Introduction
 
