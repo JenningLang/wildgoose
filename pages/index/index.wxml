@@ -3,7 +3,7 @@
 <!-- not login-->
 <view class="container" wx:if="{{!hasUserInfo && canIUse && showLogin}}">
   <view class="not-login">
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取您的信息 </button>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary"> Let's go party! </button>
     <text class="reject-tip" wx:if="{{rejectTip1}}"> 哼! </text>
     <text class="reject-tip" wx:if="{{rejectTip2}}"> 哼哼! </text>
     <text class="reject-tip" wx:if="{{rejectTip3}}"> 不理你了! </text>
@@ -49,13 +49,11 @@
           <view class='hasap-cards-card-location-abbr'>
             <image class='hasap-cards-card-location-abbr-img' src='/images/location.png'/>
             <text class='hasap-cards-card-location-abbr-prompt'>地点：</text>
-            <view class='hasap-cards-card-location-abbr-location-and-arrow'>
+            <view class='hasap-cards-card-location-abbr-location-and-arrow' bindtap="showMap">
               <text class='hasap-cards-card-location-abbr-location'>北京市海淀区中关村大街15号食宝街</text>
-              <image class='hasap-cards-card-location-abbr-up' src='/images/up-arrow.png' wx:if="{{ location.showMap }}" bindtap="toggleShowMap"/>
-              <image class='hasap-cards-card-location-abbr-down' src='/images/right-arrow.png' wx:if="{{ !location.showMap }}" bindtap="toggleShowMap"/>
+              <image class='hasap-cards-card-location-abbr-down' src='/images/right-arrow.png' wx:if="{{ !location.showMap }}"/>
             </view>
           </view>
-          <map class='hasap-cards-card-map' wx:if="{{ location.showMap }}"></map>
           <view class='hasap-cards-card-member'>
             <image class='hasap-cards-card-member-img' src='/images/group.png'/>
             <text class='hasap-cards-card-member-prompt'>邀请：</text>

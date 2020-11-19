@@ -11,7 +11,6 @@ Page({
     rejectTip2: false,
     rejectTip3: false,
     hasAp: true,
-    location: {'showMap': false},
     tabSelected: 'invited-tab',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -66,11 +65,10 @@ Page({
       }
     }
   },
-  toggleShowMap: function (e) {
-    var showMap = this.data.location.showMap;
-    this.setData({
-      location: {"showMap": !showMap}
-    });
+  showMap: function (e) {
+    wx.navigateTo({
+      url: '/pages/map/map?latitude=39.98661&longitude=116.32115',
+    })
   },
   menuTapped: function (e) {
     var tappedId = e.currentTarget.id;

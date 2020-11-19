@@ -1,0 +1,8 @@
+<!--pages/map/map.wxml-->
+
+<view class='map-container'>
+  <map id='nav-map' latitude='{{ latitude }}' longitude='{{ longitude }}'
+       show-location include-points='{{ include_points }}'	markers='{{ targetMarker }}'>
+  </map>
+  <cover-image id='current-loc-btn' src='/images/current-loc.png' bindtap='jumpToCurrentLoc'/>
+</view>

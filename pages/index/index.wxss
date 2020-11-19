@@ -4,6 +4,7 @@
 .not-login {
   display: flex;
   align-items: center;
+  margin-top: 30%;
   flex-direction: column;
 }
 
